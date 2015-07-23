@@ -239,9 +239,9 @@ public class BernoulliProcess {
 						int randomDownTime = (int) (Powerlaw());
 						
 						if(BernoulliEdges[i][j]<0.9)
-							randomUpTime= (int) (Exponential() * 400);
+							randomUpTime= (int) (Logarithmic() * 400);
 						else
-							randomUpTime= (int) (Exponential() * 40);
+							randomUpTime= (int) (Logarithmic() * 40);
 						
 						//System.out.println(randomUpTime);
 						boolean WakeUp=true;
@@ -402,7 +402,7 @@ public class BernoulliProcess {
 	}
 	
 	
-	private static double Exponential() { //SLOP 變高 CONTACT DRAUTION 下降
+	private static double Logarithmic() { //SLOP 變高 CONTACT DRAUTION 下降
 		double Temp = Math.random();
 		double randomTime = Math.log(1 / Temp) ;
 		return randomTime;
